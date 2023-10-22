@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Ordenador de Números</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <h1>Ordenador de Números</h1>
+  <label for="numero1">Digite o primeiro número: </label>
+  <input type="number" id="numero1"><br>
+  <label for="numero2">Digite o segundo número: </label>
+  <input type="number" id="numero2"><br>
+  <label for="numero3">Digite o terceiro número: </label>
+  <input type="number" id="numero3"><br>
+  <button onclick="ordenarNumeros()">Ordenar</button>
+  <p id="resultado"></p>
+
+  <script>
+    function ordenarNumeros() {
+      var numero1 = parseInt(document.getElementById("numero1").value);
+      var numero2 = parseInt(document.getElementById("numero2").value);
+      var numero3 = parseInt(document.getElementById("numero3").value);
+      
+      var numeros = [numero1, numero2, numero3];
+      numeros.sort(function(a, b) {
+        return b - a;
+      });
+
+      document.getElementById("resultado").textContent = "Números em ordem decrescente: " + numeros.join(", ");
+    }
+  </script>
+</body>
+</html>
